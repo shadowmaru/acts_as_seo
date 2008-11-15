@@ -1,3 +1,3 @@
 class Metatag < ActiveRecord::Base
-  belongs_to :metatagble, :polymorphic => true
+  belongs_to :metatagable, :polymorphic => true
 end

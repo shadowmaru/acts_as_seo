@@ -1,9 +1,9 @@
 class CreateSeoStructure < ActiveRecord::Migration
   def self.up
     create_table :metatags, :force => true do |t|
-      t.string :title, :keywords, :metatagble_type
+      t.string :title, :keywords, :metatagable_type
       t.text :description
-      t.integer :metatagble_id
+      t.integer :metatagable_id
       t.timestamps
     end
   end

@@ -47,7 +47,7 @@ module ActiveRecord
         def acts_as_seo
           before_create :create_metatags
           before_update :update_metatags
-          has_one :metatag, :as => :metatagble
+          has_one :metatag, :as => :metatagable
       	end
       end
   
