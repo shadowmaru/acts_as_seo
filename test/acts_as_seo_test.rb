@@ -1,11 +1,5 @@
 require 'test/unit'
-require File.dirname(__FILE__) + "/active_record/base_without_table"
-require File.dirname(__FILE__) + "/../lib/active_record/acts/seo"
-ActiveRecord::Base.send :include, ActiveRecord::Acts::SEO
-
-class Page < ActiveRecord::BaseWithoutTable
-  acts_as_seo
-end
+require File.dirname(__FILE__) + "/active_record/testing"
 
 class ActsAsSEOTest < Test::Unit::TestCase
   def setup
