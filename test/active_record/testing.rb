@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'active_record'
+require 'action_view'
 require File.dirname(__FILE__) + "/../../lib/active_record/acts/seo"
 require File.dirname(__FILE__) + "/../../lib/metatag.rb"
 ActiveRecord::Base.send :include, ActiveRecord::Acts::SEO
@@ -13,3 +14,5 @@ ActiveRecord::Base.establish_connection(:adapter=>"sqlite3", :database => ":memo
 require File.dirname(__FILE__) + "/../../db/create_testing_structure"
 # Then I put it up
 CreateTestingStructure.migrate(:up)
+
+class Page < ActiveRecord::Base; acts_as_seo end

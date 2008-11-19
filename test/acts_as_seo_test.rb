@@ -1,8 +1,6 @@
 require 'test/unit'
 require File.dirname(__FILE__) + "/active_record/testing"
 
-class Page < ActiveRecord::Base; acts_as_seo end
-
 class ActsAsSEOTest < Test::Unit::TestCase
   def setup
     @page = Page.new

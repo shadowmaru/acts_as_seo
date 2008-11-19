@@ -1,6 +1,7 @@
+root = "#{File.dirname(__FILE__)}/../../.."
 migration = File.dirname(__FILE__) + "/db/create_seo_structure.rb"
 
-system("cp #{migration} #{File.dirname(__FILE__)}/../../../db/migrate/#{Time.now.strftime('%Y%m%d%H%M%S')}_create_seo_structure.rb")
+system("cp #{migration} #{root}/db/migrate/#{Time.now.strftime('%Y%m%d%H%M%S')}_create_seo_structure.rb")
 
 puts <<-EOF
 
