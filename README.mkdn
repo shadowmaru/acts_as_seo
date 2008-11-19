@@ -1,0 +1,59 @@
+# Acts as SEO
+
+O Acts as SEO é um plugin criado para facilitar o gerenciamento de Metatags básicas por usuários.
+
+## Instalando
+
+### Plugin
+
+Para instalar o plugin execute no diretório raiz de seu projeto Rails:
+
+	script/plugin install git://github.com/dookie/acts_as_seo.git
+	
+A instalação irá copiar um arquivo migrate para seu diretório `db/migrate` chamado `create_seo_estructure.rb`.
+
+Execute	`rake db:migrate` para criar a tabela de metatags em sua aplicação.
+
+### ActiveRecord
+
+Abra o model onde deseja adicionar o acts_as_seo e adicione a comando lá, como no exemplo:
+
+	class Page < ActiveRecord::Base
+		acts_as_seo
+	end
+
+### ActionView
+
+Para ter acesso às tags faça o seguinte em seus formulários:
+
+	<p>
+		<%= f.label :metatag_title %>
+		<%= f.metatag_title %>
+	</p>
+	
+	<p>
+		<%= f.label :metatag_keywords %>
+		<%= f.metatag_keywords %>
+	</p>
+	
+	<p>
+		<%= f.label :metatag_description %>
+		<%= f.metatag_description %>
+	</p>
+
+Isso irá gerar o seguinte HTML:
+
+	<p>
+		<label for="page_metatag_title">Metatag title</label>
+		<input id="page_metatag_title" name="page[metatag_title]" size="30" type="text" />
+	</p>
+
+	<p>
+		<label for="page_metatag_keywords">Metatag keywords</label>
+		<input id="page_metatag_keywords" name="page[metatag_keywords]" size="30" type="text" />
+	</p>
+
+	<p>
+		<label for="page_metatag_description">Metatag description</label>
+		<textarea cols="40" id="page_metatag_description" name="page[metatag_description]" rows="20"></textarea>
+	</p>
