@@ -13,5 +13,21 @@ module ActionView
         InstanceTag.new(@object_name, method, self, nil, options.delete(:object)).to_text_area_tag(options)
       end
     end
+    
+    module MetatagHeader
+      def metatags(object)
+        object.metatags.map do |name, content|
+          "<meta name=\"#{name}\" content=\"#{content}\" />"
+        end.join("\n")
+      end
+      
+      def metatag_title(object, title="", separator="|")
+        if object.metatag_title
+          "#{title} #{separator} #{object.metatag_title}"
+        else
+          title
+        end
+      end
+    end
   end
 end

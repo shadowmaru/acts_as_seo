@@ -57,3 +57,6 @@ Isso irá gerar o seguinte HTML:
 		<label for="page_metatag_description">Metatag description</label>
 		<textarea cols="40" id="page_metatag_description" name="page[metatag_description]" rows="20"></textarea>
 	</p>
+	
+Em suas views faça:
+

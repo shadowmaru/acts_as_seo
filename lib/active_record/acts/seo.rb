@@ -40,6 +40,13 @@ module ActiveRecord
           rescue
             @metatag_keywords
         end
+        
+        def metatags
+          mt = []
+          mt << ['keywords', metatag.keywords] rescue nil
+          mt << ['description', metatag.description] rescue nil
+          mt
+        end
 
       end
       

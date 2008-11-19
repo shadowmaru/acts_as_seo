@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'active_record'
-require 'action_view'
 require File.dirname(__FILE__) + "/../../lib/active_record/acts/seo"
 require File.dirname(__FILE__) + "/../../lib/metatag.rb"
 ActiveRecord::Base.send :include, ActiveRecord::Acts::SEO
