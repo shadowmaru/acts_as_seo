@@ -24,27 +24,21 @@ module ActiveRecord
         end
         
         def metatag_title
-            metatag.title
-          rescue
-            @metatag_title
+            metatag.title rescue @metatag_title
         end
         
         def metatag_description
-            metatag.description
-          rescue
-            @metatag_description
+            metatag.description rescue @metatag_description
         end
         
         def metatag_keywords
-            metatag.keywords
-          rescue
-            @metatag_keywords
+          metatag.keywords rescue @metatag_keywords
         end
         
         def metatags
           mt = []
-          mt << ['keywords', metatag.keywords] rescue nil
           mt << ['description', metatag.description] rescue nil
+          mt << ['keywords', metatag.keywords] rescue nil
           mt
         end
 
