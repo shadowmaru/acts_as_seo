@@ -15,3 +15,4 @@ require File.dirname(__FILE__) + "/../../db/create_testing_structure"
 CreateTestingStructure.migrate(:up)
 
 class Page < ActiveRecord::Base; acts_as_seo end
+class TestPage < ActiveRecord::Base; end

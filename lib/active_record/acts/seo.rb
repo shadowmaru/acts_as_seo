@@ -3,7 +3,6 @@ module ActiveRecord
     module SEO
       def self.included(base)
         base.extend(ClassMethods)
-        base.send(:include, InstanceMethods)
       end
   
       module InstanceMethods
@@ -46,6 +45,8 @@ module ActiveRecord
       
       module ClassMethods
         def acts_as_seo
+          include ActiveRecord::Acts::SEO::InstanceMethods
+          
           before_create :create_metatags
           before_update :update_metatags
           has_one :metatag, :as => :metatagable

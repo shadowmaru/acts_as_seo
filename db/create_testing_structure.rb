@@ -12,9 +12,13 @@ class CreateTestingStructure < ActiveRecord::Migration
       t.text :body
       t.timestamps
     end
+    
+    create_table :test_pages, :force => true do |t|
+    end
   end
 
   def self.down
+    drop_table :test_pages
     drop_table :pages
     drop_table :metatags
   end

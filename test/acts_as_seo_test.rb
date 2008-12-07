@@ -6,6 +6,10 @@ class ActsAsSEOTest < Test::Unit::TestCase
     @page = Page.new
   end
   
+  def test_if_active_record_has_seo_methods
+    assert !TestPage.new.respond_to?(:metatag_title)
+  end
+  
   def test_should_have_one_metatag
     assert_respond_to(@page, :metatag)
   end
